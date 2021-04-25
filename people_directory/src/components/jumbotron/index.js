@@ -1,12 +1,12 @@
 import React from "react";
 import "./style.css";
 
-function Jumbo(props) {
+function Jumbo() {
   return (
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">People directory</h1>
-        <p class="lead">
+    <div className="jumbotron jumbotron-fluid">
+      <div className="container">
+        <h1 className="display-4">People Directory</h1>
+        <p className="lead">
           Find someone from work you may know (no stalking)
         </p>
       </div>
