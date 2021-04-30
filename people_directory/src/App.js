@@ -1,7 +1,8 @@
 import React from "react";
 import './App.css';
-import Jumbo from "./components/jumbotron";
+import Jumbo from "./components/Jumbotron";
 import SearchForm from "./components/SearchForm";
+import Table from "./components/Table"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       
       <Jumbo />
       <SearchForm />
+      <Table />
       
     </div>
   );
