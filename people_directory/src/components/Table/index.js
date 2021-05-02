@@ -1,8 +1,33 @@
-import React from "react";
+import React, {Component} from "react";
 import "./style.css";
+import API from "../utils/API";
 
 
-function Table(props) {
+
+class Table extends Component {
+    state = {
+      image: {},
+      name: "",
+      phone: Number,
+      email: "",
+      dob: Date,
+      
+    };
+
+     
+    componentDidMount() {
+        this.employees;
+      }
+
+      employees () {
+        API.getEmployees()
+          .then(res => this.setState({ res }))
+          .catch(err => console.log(err));
+        
+      };
+      
+
+      render() {
         return (
             <table class="table table-striped table-dark">
             <thead>
@@ -36,6 +61,10 @@ function Table(props) {
             </tbody>
           </table>
         )
-    }
+
+        
+      }
+        
+    
 
 export default Table;
