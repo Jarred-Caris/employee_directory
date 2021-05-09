@@ -13,8 +13,17 @@ class Table extends Component {
 
   getEmployees() {
     API.loadEmployees()
-      .then(res=> this.setState({ employees: res.data.results }))
+      // .then(res=> this.setState({ employees: [...res.data.results].sort((function(a, b){return (a.name.first < b.name.first) ? -1 : 1}))
+      .then(res=> this.setState({ employees: res.data.results
+      }))
       .catch(err => console.log(err));
+  }
+
+   sortByFirstName () {
+     console.log("clicked")
+// Update this.state.employees such that they are sorted by their fist name. 
+    this.setState ({ employees: [...this.state.employees].sort(   (function(a, b){return (a.name.first < b.name.first) ? -1 : 1}))
+    }); 
   }
 
   render() {
@@ -23,7 +32,7 @@ class Table extends Component {
         <thead>
           <tr>
             <th scope="col">Image</th>
-            <th scope="col">First Name</th>
+            <th scope="col" onClick = {() => { this.sortByFirstName()}}>First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone</th>
