@@ -4,31 +4,26 @@ import "./style.css";
 // Using the datalist element we can create autofill suggestions based on the props.breeds array
 function SearchForm(props) {
   return (
-    <form className="search">
-      <form className="search">
-      {/* <div className="form-group">
-        <label htmlFor="breed">Employee Name</label>
+    <div className="Searchbox" id="searchBox">
+      <form className="d-flex">
         <input
+          className="form-control me-2"
+          type="search"
+          placeholder="Name Search"
+          aria-label="Search"
           value={props.search}
+          name="Name"
           onChange={props.handleInputChange}
-          name="name"
-          list="employees"
-          type="text"
-          className="form-control"
-          placeholder="Type in the name of the employee"
-          id="employee"
-        // />
-        // <datalist id="employees">
-        //   {props.employees.map(employee => (
-        //     <option value={employee} key={employee} />
-        //   ))}
-        // </datalist>
-        // <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
-        //   Search
-        // </button>
-      </div> */}
-    </form>
-    </form>
+        />
+        <button
+          className="btn btn-outline-success"
+          type="submit"
+          onClick={props.handleFormSubmit}
+        >
+          Search
+        </button>
+      </form>
+    </div>
   );
 }
 
